@@ -1,0 +1,12 @@
+<div>
+    <input type="text" [(ngModel)]="termino">
+</div>
+<div>
+    <button (click)="ejecutar()">Accionar</button>
+</div>
+
+<div class="color_exto">
+    <ul *ngFor="let item of lista">
+        <li>{{ item.superhero }}</li>
+    </ul>
+</div>
