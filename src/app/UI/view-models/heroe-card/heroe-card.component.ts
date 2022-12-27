@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetHeroeUseCase } from '../../../domain/usecase/get-heroe-use-case';
+import { GetHeroeUseCase } from '../../../domain/usecase/heroe/get-heroe-use-case';
 
 @Component({
   selector: 'app-heroe-card',

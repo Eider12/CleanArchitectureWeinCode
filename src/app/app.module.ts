@@ -28,7 +28,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule
   ],
-  providers: [{provide: AlbumGateway, useClass: AlbumApiService}],
+  providers: [{provide: AlbumGateway, useClass: AlbumApiService},{provide: HeroeGateway, useClass: HeroeApiService}],
   // providers: [{provide: HeroeGateway, useClass: HeroeApiService}],
   bootstrap: [AppComponent]
 })
