@@ -2,4 +2,22 @@
 
 .color_exto{
     color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text {
+    text-align: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+ ul li:hover {
+    color: rgb(124, 124, 92);
+}
+
+.pre {
+    color: rgb(124, 124, 92);;
 }

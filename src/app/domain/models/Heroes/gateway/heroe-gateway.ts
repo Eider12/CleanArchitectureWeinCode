@@ -4,4 +4,5 @@ import { Heroe } from '../heroe';
 
 export abstract class HeroeGateway {
     abstract getByID(id: String): Observable<Heroe>;
+    abstract getHeroes(): Observable<Heroe[]>;
 }

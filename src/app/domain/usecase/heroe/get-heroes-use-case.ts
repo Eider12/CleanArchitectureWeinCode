@@ -8,12 +8,12 @@ import { Injectable } from "@angular/core";
   })
 
 
-export class GetHeroeUseCase {
+export class GetHeroesUseCase {
 
     constructor( private _heroeGateway: HeroeGateway) {}
 
-    getHeroeById( id: String): Observable <Heroe> {   
-        return this._heroeGateway.getByID(id);
+    getHeroes(): Observable<Heroe[]> {
+        return this._heroeGateway.getHeroes();
     }
 
 }

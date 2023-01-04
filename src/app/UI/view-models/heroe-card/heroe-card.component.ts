@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetHeroesUseCase } from 'src/app/domain/usecase/heroe/get-heroes-use-case';
 import { GetHeroeUseCase } from '../../../domain/usecase/heroe/get-heroe-use-case';
 
 @Component({
@@ -8,7 +9,8 @@ import { GetHeroeUseCase } from '../../../domain/usecase/heroe/get-heroe-use-cas
 })
 export class HeroeCardComponent implements OnInit {
 
-  constructor(private _getHeroeUseCase: GetHeroeUseCase) { }
+  constructor(private _getHeroeUseCase: GetHeroeUseCase,
+              private _getHeroesUseCase: GetHeroesUseCase) { }
 
   response$;
   dato$;
@@ -16,23 +18,33 @@ export class HeroeCardComponent implements OnInit {
   termino: string = '';
   lista: any[] = [];
 
+  heroe = {};
+
   ngOnInit(): void {
     // this.iniciar();
+    this.init();
   }
 
-  iniciar(dato: string){
+  iniciar(dato: string){ 
     this._getHeroeUseCase.getHeroeById(dato)
     .subscribe( dato => {
-
-      this.lista.push(dato);
+      //this.lista.push(dato);
       console.log(dato);
-      console.log(this.lista);
-      
+      //console.log(this.lista);
+      this.heroe = dato;   
     });
   }
 
   ejecutar(){
-    this.iniciar(this.termino)
+    this.iniciar(this.termino);
+  }
+
+  init() {
+    this._getHeroesUseCase.getHeroes()
+        .subscribe( data => {
+          console.log(data);
+          this.lista = data;      
+        });
   }
 
 }

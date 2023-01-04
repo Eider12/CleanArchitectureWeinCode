@@ -13,6 +13,7 @@ import { HeroeGateway } from './domain/models/Heroes/gateway/heroe-gateway';
 import { HeroeApiService } from './infraestructure/driven-adapter/heroe-api/heroe-api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,9 +27,13 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
-  providers: [{provide: AlbumGateway, useClass: AlbumApiService},{provide: HeroeGateway, useClass: HeroeApiService}],
+  providers: [
+    {provide: AlbumGateway, useClass: AlbumApiService},
+    {provide: HeroeGateway, useClass: HeroeApiService}
+  ],
   // providers: [{provide: HeroeGateway, useClass: HeroeApiService}],
   bootstrap: [AppComponent]
 })

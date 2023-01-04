@@ -12,12 +12,16 @@ import { Heroe } from '../../../domain/models/Heroes/heroe';
 export class HeroeApiService extends HeroeGateway {
 
   // private _url = 'http://localhost:3000/heroes/dc-batman';
-  private _url = 'http://localhost:3000/heroes/';
+  private _url = 'http://localhost:3000';
 
   constructor( private http: HttpClient) {super();}
 
+  getHeroes(): Observable<Heroe[]> {
+    return this.http.get<Heroe[]>(`${ this._url }/heroes`);
+  }
+  
   getByID( id: String): Observable<Heroe> {
-    return this.http.get<Heroe>(`${this._url}${id}`);
+    return this.http.get<Heroe>(`${this._url}/heroes/${id}`);
   }
   
 }

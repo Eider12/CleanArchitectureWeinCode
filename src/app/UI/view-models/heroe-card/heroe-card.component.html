@@ -1,12 +1,22 @@
-<div>
-    <input type="text" [(ngModel)]="termino">
-</div>
-<div>
-    <button (click)="ejecutar()">Accionar</button>
+<div class="text">
+    <div>
+        <input type="text" [(ngModel)]="termino">
+    </div>
+    <div>
+        <button (click)="ejecutar()">Accionar</button>
+    </div>
 </div>
 
 <div class="color_exto">
-    <ul *ngFor="let item of lista">
-        <li>{{ item.superhero }}</li>
-    </ul>
+    <div>
+        <ul *ngFor="let item of lista">
+            <li class="pointer" (click)="iniciar(item.id)">{{ item.superhero }}</li>
+        </ul>
+    </div>
+    <div class="pre">
+        <pre>{{ heroe | json }}</pre>
+    </div>
+    <div>
+        
+    </div>
 </div>
